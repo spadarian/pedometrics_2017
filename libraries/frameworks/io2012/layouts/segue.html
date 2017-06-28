@@ -1,0 +1,16 @@
+<slide class="segue {{ slide.class }}" id="{{ slide.id }}" style="background:{{{ slide.bg }}};">
+  {{# slide.header }}
+  <hgroup>
+    {{{ slide.header }}}
+    {{{ slide.content }}}
+  </hgroup>
+  {{/ slide.header }}
+  <!-- Presenter Notes -->
+  {{# slide.pnotes }}
+  <aside class="note" id="{{ id }}">
+    <section>
+      {{{ html }}}
+    </section>
+  </aside>
+  {{/ slide.pnotes }}
+</slide>

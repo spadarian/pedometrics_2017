@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DSM online services</title>
+  <meta charset="utf-8">
+  <meta name="description" content="DSM online services">
+  <meta name="author" content="José Padarian, Alex McBratney, Budiman Minasny">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script>
+  <script data-main="libraries/frameworks/io2012/js/slides"
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground" style="background: #E75032">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/usyd_logo_black.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue orange nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/usyd_logo_big_black.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>DSM online services</h1>
+    <h2>From the soil to the cloud</h2>
+    <p>José Padarian, Alex McBratney, Budiman Minasny<br/>University of Sydney</p>
+  </hgroup>
+  <article></article>
+  <footer class = 'license'>
+    <a href='https://creativecommons.org/licenses/by-sa/4.0/'>
+    <img width = '80px' src = 'https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-sa.png'>
+    </a>
+  </footer>
+</slide>
+
+
+    <!-- SLIDES -->
+    <slide class="segue orange nobackground" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background</h2>
+    
+  </hgroup>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-2" style="background:white;">
+  <hgroup>
+    <h2>Motivation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>DSM reaching a &quot;young adult&quot; state
+
+<ul>
+<li>&quot;Mature&quot;</li>
+<li>&quot;Dynamic&quot;</li>
+</ul></li>
+<li>DSM implementation is not trivial
+
+<ul>
+<li>Large extents and/or high resolution</li>
+</ul></li>
+<li>Make DSM more accessible
+
+<ul>
+<li>Infrastructure</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <ul>
+<li>BLA</li>
+</ul>
+
+    </section>
+  </aside>
+</slide>
+<slide class="" id="slide-3" style="background:white;">
+  <hgroup>
+    <h2>Not a new idea</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>INTAMAP (Pebesma <em>et al.</em> 2009)</p>
+
+<p>Interpolation web service</p></li>
+</ul>
+
+<p><img src="assets/img/intamap.jpg" width="250" style="right:5%;top:7%;position:absolute;"></p>
+
+<ul>
+<li><p>SIS+ (Heuvelink <em>et al.</em> 2010)</p>
+
+<p>Exploring the idea of generating maps &quot;on-the-fly&quot;</p></li>
+<li><p>Other disciplines</p>
+
+<ul>
+<li>AquaMaps</li>
+<li>Lifemapper</li>
+<li>Biodiversity &amp; Climate Change Virtual Laboratory</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-4" style="background:white;">
+  <hgroup>
+    <h2>Back in 2013... Google Earth Engine</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/google-products.png" width="700" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-5" style="background:white;">
+  <hgroup>
+    <h2>Back in 2015...</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/gee_paper.png" width="800" class='centered'></p>
+
+<!-- ---
+
+## Some features
+
+* Access to over 40 years of Satellite Imagery (with daily updates)
+* Algorithms to analyse that data
+* Google's computer clusters to analyse the data at scale
+* A web-based tool for interactive data exploration -->
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="segue orange nobackground" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>DSM workflow</h2>
+    <h3>In the cloud</h3>
+
+<!-- ---
+
+## User expectations
+
+* Easy to use
+* Fast
+
+<br>
+
+<p class='centered'><strong>Try to maintain the flow</strong></p>
+
+<br>
+
+## Can we deliver?
+
+<br>
+
+<p class='centered'><strong>Sometimes... but we try our best</strong></p> -->
+
+<!-- ---
+
+## Process soil information
+
+* Gathering data
+* Data cleansing
+* Pre-processing (splines)
+
+### EDA
+
+* Transformations
+* Dimensionality reduction
+
+<br>
+
+<p class='centered'><strong>Hard to automatise but it can be facilitated by a platform</strong></p> -->
+
+  </hgroup>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-7" style="background:white;">
+  <hgroup>
+    <h2>Compile covariates</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>DSM depends on environmental covariates (<em>scorpan</em>)</li>
+<li>Usually available as <strong>raster images</strong></li>
+</ul>
+
+<p><br></p>
+
+<!-- <p class='centered'><strong>Big challenge in terms of disk space</strong></p> -->
+
+<!-- <br> -->
+
+<h3>Challenges</h3>
+
+<ul>
+<li>Many datasets</li>
+<li>Storage</li>
+<li>Manage resolution</li>
+<li>Extract data at specific location</li>
+</ul>
+
+<p><img src="assets/img/pyramid.png" width="250" style="right:15%;top:55%;position:absolute;"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-8" style="background:white;">
+  <hgroup>
+    <h2>Google Earth Engine example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/covariates.png" class='centered' width="90%" style='margin-top:50px;margin-bottom:50px'></p>
+
+<p>&gt; 200 public datasets<br>
+&gt; 4000 new images every day<br>
+&gt; 5 million images<br>
+&gt; 5 petabytes of data</p>
+
+  </article>
+  <!-- References -->
+    <div class='references'>
+    <p>Source: GEE training materials</p>
+
+<!-- ---
+
+## Other alternatives
+
+* Amazon Web Services
+* Google Cloud Storage
+* Institutional repositories
+  *  National Computational Infrastructure (Australia)
+  * Others?
+
+<br> -->
+
+<!-- <p class='centered'><strong>Usually not stored as pyramid (original images)</strong></p> -->
+
+<!-- ---
+
+## Extract data from covariates
+
+* Match point observations with tiles
+* Decide which resolution to use
+
+<br>
+
+<p class='centered'><strong>Pyramid is very important</strong></p>
+
+<br>
+
+### "Smart" re-sampling
+
+* Re-sample the nearest pre-computed resolution -->
+
+    </div>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-9" style="background:white;">
+  <hgroup>
+    <h2>Model training</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Google EE has limited number of algorithms available
+
+<ul>
+<li>Tree-like (CART, Random Forest)</li>
+<li>Perceptron</li>
+<li>Support Vector Machine</li>
+<li>Others</li>
+</ul></li>
+<li>We have been testing:
+
+<ul>
+<li>R (Cubist, rpart, MLR)</li>
+<li>Python (scikit-learn NN)</li>
+</ul></li>
+</ul>
+
+<p><img src="assets/img/cart.png" style="right:140px;top:47%;position:absolute;"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-10" style="background:white;">
+  <hgroup>
+    <h2>Generate map</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is probably the most critical step (time)</p>
+
+<ul>
+<li>Infrastructure dependent</li>
+</ul>
+
+<!-- * The prediction is made at the viewport
+  * It depends on the extent
+  * It depends on the zoom level (resolution) -->
+
+<p><br>
+<br>
+<br></p>
+
+<p class='centered'><strong>Tiling is very important (parallel!)</strong></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-11" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_1.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-12" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_2.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-13" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_3.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-14" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_4.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-15" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_5.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-16" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_6.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-17" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_7.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground" id="slide-18" style="background:white;">
+  <hgroup>
+    <h2>Tiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/how_8.png" width="75%"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-19" style="background:white;">
+  <hgroup>
+    <h2>Uncertainty assessment</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Highly recommended (mandatory?)</li>
+<li>Time consuming (many iterations)</li>
+</ul>
+
+<h3>Methods</h3>
+
+<ul>
+<li>Bootstrapping</li>
+<li>Fuzzy-k means with extragrades</li>
+</ul>
+
+<p><img src="assets/img/curve.png" style="width:40%;right:5%;top:40%;position:absolute;"></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-20" style="background:white;">
+  <hgroup>
+    <h2>Sharing</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There are multiple alternatives:</p>
+
+<ul>
+<li>Raster file (potentially big files)</li>
+<li>Web map</li>
+<li>Just the model (on-the-fly)</li>
+</ul>
+
+<p><br></p>
+
+<div style="margin-left:auto;margin-right:auto;display:table">
+<img src="assets/img/google_drive_logo.png" style="height:125px;float:left;margin: 0 20px;">
+<img src="assets/img/google_cloud_storage_logo.png" style="height:100px;float:left;margin: 0 20px;margin-top:15px">
+<img src="assets/img/google_gee_logo.png" style="height:100px;float:left;margin: 0 20px;margin-top:5px">
+</div>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="segue orange nobackground" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Our platform</h2>
+    <h3><code>https://mapping.soil.properties</code></h3>
+
+  </hgroup>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-22" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-23" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform1.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-24" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform1.png" width="100%" class='centered'>
+<img src="assets/img/csv.png" width="50%" style="top:10%;right:26%;position:absolute" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-25" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform2.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-26" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform3.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-27" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform4.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-28" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform5.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-29" style="background:white;">
+  <article data-timings="">
+    <p><img src="assets/img/platform6.png" width="100%" class='centered'></p>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="segue orange nobackground" id="slide-30" style="background:;">
+  <hgroup>
+    <h2>Demo</h2>
+    
+  </hgroup>
+  <!-- Presenter Notes -->
+</slide>
+<slide class="nobackground full_screen" id="slide-31" style="background:white;">
+  <article data-timings="">
+    <script>
+var play_videos = function() {
+    // var list = document.getElementsByTagName('video');
+    var list = $('slide.current').find('video')
+    for (var i = 0; i < list.length; i++) {
+        if(list[i].paused) {
+            list[i].play();
+        } else {
+            list[i].pause();
+        }
+    };
+};
+
+</script>
+
+<p><video style="width: 42%; float:left" onclick='play_videos()'>
+  <source src="assets/video/chile_final.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+
+<p><video style="width: 42%; float:right" onclick='play_videos()'>
+  <source src="assets/video/us_final.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<br>
+<video style="width: 42%; float:left; margin-top:10px" onclick='play_videos()'>
+  <source src="assets/video/world_final.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+
+<p><video style="width: 42%; float:right; margin-top:10px" onclick='play_videos()'>
+  <source src="assets/video/uncertainty_final.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video></p>
+
+<!-- ---
+
+## Features
+
+* Access large catalogue of covariates (GEE)
+* Machine learning algorithms (CART, RF, MLR)
+* Generation of maps on-the-fly
+* Private
+  * EDA client-side
+  * No observations stored in the server (hash) -->
+
+<!-- ---
+
+## Future work
+
+* Uncertainty assessment (Fuzzy-k means/modes)
+* Equal-area splines (standard depths)
+* Full implementation of R and python models
+* Import/Export maps parameters and data (sharing)
+* Automatic quality assessment?
+* Privacy and collaborative modelling
+* Replace GEE? -->
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+<slide class="" id="slide-32" style="background:white;">
+  <hgroup>
+    <h2>Final remarks</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br></p>
+
+<p class='centered'><strong>Considerably decreases iteration time in map production</strong></p>
+
+<p><br></p>
+
+<ul>
+<li>Who should us it?
+
+<ul>
+<li>Individuals</li>
+<li>Institutions</li>
+<li>Consortia</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- References -->
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="thank-you-slide segue orange nobackground">
+      <aside class="gdbar right">
+    <img src="assets/img/usyd_logo_big_black.png">
+  </aside>
+  
+  <article class="flexbox vleft auto-fadein">
+    <h2>Gracias!!!</h2>
+  </article>
+  <p class="auto-fadein"><a href="mailto:jose.padarian@sydney.edu.au,spadarian@gmail.com" style="color: white">jose.padarian@sydney.edu.au</a></p>
+        <a href="https://github.com/spadarian/pedometrics_2017/zipball/gh-pages" class="definition">
+     Download
+    </a>
+  <article></article>
+    </slide>    <!-- <slide class="backdrop"></slide> -->
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=1 title='Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=2 title='Motivation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=3 title='Not a new idea'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=4 title='Back in 2013... Google Earth Engine'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=5 title='Back in 2015...'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=6 title='DSM workflow'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=7 title='Compile covariates'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=8 title='Google Earth Engine example'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=9 title='Model training'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=10 title='Generate map'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=11 title='Tiling'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=12 title='Tiling'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=13 title='Tiling'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=14 title='Tiling'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=15 title='Tiling'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=16 title='Tiling'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=17 title='Tiling'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=18 title='Tiling'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=19 title='Uncertainty assessment'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=20 title='Sharing'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=21 title='Our platform'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=22 title='NA'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=23 title='NA'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=24 title='NA'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=25 title='NA'>
+         25
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=26 title='NA'>
+         26
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=27 title='NA'>
+         27
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=28 title='NA'>
+         28
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=29 title='NA'>
+         29
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=30 title='Demo'>
+         30
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=31 title='NA'>
+         31
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=32 title='Final remarks'>
+         32
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

@@ -1,0 +1,19 @@
+<slide class="thank-you-slide segue orange nobackground">
+  {{# page.logo }}
+  <aside class="gdbar right">
+    <img src="{{page.url.assets}}/img/{{{ page.logo }}}">
+  </aside>
+  {{/ page.logo }}
+  {{# page.last_message }}
+  <article class="flexbox vleft auto-fadein">
+    <h2>{{ page.last_message }}</h2>
+  </article>
+  {{/ page.last_message }}
+  <p class="auto-fadein"><a href="mailto:jose.padarian@sydney.edu.au,spadarian@gmail.com" style="color: white">jose.padarian@sydney.edu.au</a></p>
+  {{# page.github }}
+    <a href="https://github.com/{{user}}/{{repo}}/zipball/gh-pages" class="definition">
+     Download
+    </a>
+  {{/ page.github }}
+  <article></article>
+</slide>
